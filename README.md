@@ -1,0 +1,1 @@
+This is a project for McGill MMA course MGSC673.
