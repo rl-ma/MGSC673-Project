@@ -8,7 +8,23 @@ Traditional software development involves long hours of repetitive keyboard and 
 
 This project explores a playful, hands-free **Meme-Driven Interactive Coding Environment** that gamifies developer workflows. Using a standard webcam feed, a custom deep learning object detection model detects and classifies physical "meme cards" (printed popular internet memes) or memes displayed on a smartphone/secondary screen in real time, translating those visual cues into actionable IDE shortcuts and programming commands.
 
-## Example Meme-to-Command Mappings
+## Meme Templates (`Memes/`)
+
+The repository currently includes **7 meme templates** in [`Memes/`](Memes/):
+
+| File | Meme Name | Also Known As / Origin |
+| :--- | :--- | :--- |
+| [`black-guy-pointing-at-head.png`](Memes/black-guy-pointing-at-head.png) | **Roll Safe** | Guy Pointing at His Head (Kayode Ewumi in *Hood Documentary*) |
+| [`cat.webp`](Memes/cat.webp) | **Woman Yelling at a Cat** | Taylor Armstrong (*RHOBH*) & Smudge the Cat |
+| [`clarkson.jpg`](Memes/clarkson.jpg) | **Jeremy Clarkson Driving an Ariel Atom** | *Top Gear* (Series 5, Episode 9) |
+| [`eminem.jpeg`](Memes/eminem.jpeg) | **Eminem Throwing Things** | "Woe, Plague Be Upon Ye" (fan-made *GQ* cover mockup) |
+| [`red-angry-bird.webp`](Memes/red-angry-bird.webp) | **Angry Bird Ear** | Angry Bird Listening / "I'm All Ears" |
+| [`shock.webp`](Memes/shock.webp) | **Disintegrating Emoji** | Screaming Emoji / Emoji Turning to Dust / "NOOOO" Emoji |
+| [`shocked-black-guy.jpg`](Memes/shocked-black-guy.jpg) | **Shocked Black Guy** | Surprised Black Guy (YouTuber Jslutty) |
+
+## Example Meme-to-Command Mappings (Proposal)
+
+Illustrative mappings proposed to demonstrate how detected memes can trigger IDE and system actions:
 
 | Meme Template | Triggered Action |
 | :--- | :--- |
@@ -17,14 +33,12 @@ This project explores a playful, hands-free **Meme-Driven Interactive Coding Env
 | **Two Buttons** | Toggle between terminal tabs |
 | **Hide the Pain Harold** | Mute the system |
 
-Additional planned meme templates include **Distracted Boyfriend** and **Drake Hotline Bling**.
-
 ## Dataset
 
 Rather than relying on a public dataset, this project uses a custom, self-annotated dataset designed to match real-world desk-setup webcam detection:
 
 - **Collection:** Captured via a personal laptop webcam with memes printed on paper or displayed on a smartphone across varied orientations, distances, and lighting conditions.
-- **Classes:** 5 to 10 popular meme templates.
+- **Classes:** 5 to 10 popular meme templates (7 templates currently stored in [`Memes/`](Memes/)).
 - **Approximate Size:** 15 to 20 annotated images.
 - **Input Variables:** RGB image frames (e.g., `640×640` resolution) from the webcam's field of view.
 - **Target / Output:** Bounding box coordinates `(x, y, width, height)` and the categorical class label for each meme template present in the frame.
